@@ -1,4 +1,4 @@
-# Episode 64
+# Episode 64 - Push Messages with FCM and Firestore
 
 Watch the [firestore cloud messaging screencast](https://angularfirebase.com/lessons/push-messages-with-firestore/)
 
