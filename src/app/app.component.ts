@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { Observable } from 'rxjs/Observable';
+import { MessagingService } from './core/messaging.service'
+import { AuthService } from './core/auth.service';
+import './utils/rxjs.operators';
+
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,19 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AppComponent implements OnInit {
 
+  constructor(public msg: MessagingService, public auth: AuthService) { }
 
-  constructor(private afs: AngularFirestore) { }
-
-  ngOnInit() { }
-
-
+  ngOnInit() { 
+    this.auth.user
+    .filter(user => !!user) // filter null
+    .take(1) // take first real user
+    .subscribe(user => {
+      if (user) {
+        this.msg.getPermission(user)
+        this.msg.monitorRefresh(user)
+        this.msg.receiveMessages()
+      }
+    })
+  }
+  
 }

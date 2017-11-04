@@ -1,10 +1,13 @@
-# Episode XY
+# Episode 64
 
-Watch the [screencast]()
+Watch the [firestore cloud messaging screencast](https://angularfirebase.com/lessons/push-messages-with-firestore/)
 
 ## Usage
 
 - `git clone`
-- create the `src/enviornments/environment.ts` file and add your firebase config to it
+- Add your firebase config to `src/enviornments/environment.ts` and update the `app.module`. 
 - `npm install`
 - `ng serve`
+
+
+

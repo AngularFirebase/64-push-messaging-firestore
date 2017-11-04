@@ -1,0 +1,6 @@
+{
+    "short_name": "AngularFirebase",
+    "name": "Angular 5 + Firebase Cloud Messaging",
+    "start_url": "/?utm_source=homescreen",
+    "gcm_sender_id": "103953800507"
+}
